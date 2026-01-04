@@ -1,0 +1,137 @@
+/*
+ * Josh Jones Gardening | Astra Theme Custom CSS
+ * Ported Design System for WordPress Integration
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+:root {
+    --jjg-primary: #1B2616;
+    --jjg-secondary: #4A5B63;
+    --jjg-accent: #D9D4CC;
+    --jjg-background: #F2F4F0;
+    --jjg-white: #FFFFFF;
+    --jjg-selection: #D9D4CC;
+}
+
+/* Base Styles & Typography */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--jjg-background);
+    color: var(--jjg-primary);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, 
+.ast-site-title, 
+.entry-title, 
+.font-serif {
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 400;
+    color: var(--jjg-primary);
+}
+
+::selection {
+    background-color: var(--jjg-selection);
+    color: var(--jjg-primary);
+}
+
+/* Button & Link Aesthetics */
+.ast-button, 
+button, 
+input[type="submit"], 
+.button {
+    background-color: var(--jjg-primary) !important;
+    color: var(--jjg-white) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.2em !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    padding: 18px 40px !important;
+    border-radius: 100px !important;
+    transition: all 0.3s ease !important;
+    border: none !important;
+    box-shadow: 0 10px 30px rgba(27, 38, 22, 0.1) !important;
+}
+
+.ast-button:hover, 
+button:hover {
+    background-color: #2c3d25 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(27, 38, 22, 0.15) !important;
+}
+
+/* Form Styling to match BookingForm.tsx */
+input[type="text"], 
+input[type="email"], 
+textarea, 
+select {
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(27, 38, 22, 0.2) !important;
+    padding: 12px 0 !important;
+    border-radius: 0 !important;
+    outline: none !important;
+    transition: border-color 0.3s ease !important;
+}
+
+input:focus, 
+textarea:focus {
+    border-bottom-color: var(--jjg-primary) !important;
+}
+
+/* Scroll Reveal Classes (Compatible with Gutenberg) */
+.reveal {
+    opacity: 0;
+    transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform, opacity;
+}
+
+.reveal-up { transform: translateY(40px); }
+.reveal-left { transform: translateX(-40px); }
+.reveal-right { transform: translateX(40px); }
+.reveal-scale { transform: scale(0.95); }
+
+.reveal-visible {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+}
+
+/* Staggered Delays for Grid Elements */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+
+/* Keyframe Animations */
+@keyframes fade-in-up {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 1.2s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+}
+
+/* Astra Specific Overrides */
+.main-header-bar {
+    border-bottom: none !important;
+    background-color: transparent !important;
+}
+
+.ast-container {
+    max-width: 1400px !important;
+}
+
+.entry-content p {
+    line-height: 1.8;
+    font-weight: 300;
+    color: rgba(27, 38, 22, 0.8);
+}
+
+/* Utility: High-end spacing */
+.jjg-section-padding {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}

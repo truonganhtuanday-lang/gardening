@@ -1,0 +1,1 @@
+// File deleted per user request. Use headless WordPress for CMS functionality.
