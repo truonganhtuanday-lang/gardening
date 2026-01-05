@@ -1,7 +1,5 @@
 {
   "name": "Josh Jones Gardening 2",
-  "description": "Premium landscape design and stewardship with AI-powered site analysis.",
-  "requestFramePermissions": [
-    "camera"
-  ]
+  "description": "Premium landscape design and stewardship.",
+  "requestFramePermissions": []
 }

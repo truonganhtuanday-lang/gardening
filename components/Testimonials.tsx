@@ -1,3 +1,4 @@
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -6,7 +7,11 @@
 import React from 'react';
 import { TESTIMONIALS } from '../constants';
 
-const Testimonials: React.FC = () => {
+interface TestimonialsProps {
+  content?: any;
+}
+
+const Testimonials: React.FC<TestimonialsProps> = ({ content }) => {
   return (
     <section id="testimonials" className="py-32 px-6 md:px-12 bg-white">
       <div className="max-w-[1800px] mx-auto text-center">

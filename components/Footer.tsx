@@ -1,3 +1,4 @@
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -38,9 +39,17 @@ const Footer: React.FC<FooterProps> = ({ onLinkClick }) => {
           <h4 className="font-semibold text-white mb-6 tracking-widest text-xs uppercase">Navigation</h4>
           <ul className="space-y-4 text-sm font-light">
             <li><a href="#services" onClick={(e) => onLinkClick(e, 'services')} className="hover:text-white transition-colors">Services</a></li>
-            <li><a href="#about" onClick={(e) => onLinkClick(e, 'about')} className="hover:text-white transition-colors">About Us</a></li>
             <li><a href="#portfolio" onClick={(e) => onLinkClick(e, 'portfolio')} className="hover:text-white transition-colors">Portfolio</a></li>
             <li><a href="#journal" onClick={(e) => onLinkClick(e, 'journal')} className="hover:text-white transition-colors">Journal</a></li>
+            <li>
+              <a 
+                href="/admin" 
+                onClick={(e) => onLinkClick(e, 'admin')} 
+                className="opacity-40 hover:opacity-100 transition-opacity"
+              >
+                Management Studio
+              </a>
+            </li>
           </ul>
         </div>
       </div>

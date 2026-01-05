@@ -1,3 +1,4 @@
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -5,7 +6,19 @@
 
 import React from 'react';
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  content?: {
+    title: string;
+    subtitle: string;
+    image: string;
+  };
+}
+
+const Hero: React.FC<HeroProps> = ({ content }) => {
+  const displayTitle = content?.title || "Artistry in the Soil.";
+  const displaySubtitle = content?.subtitle || "Curated landscaping and garden stewardship for the Pacific Northwest's most distinguished homes.";
+  const displayImage = content?.image || "https://images.unsplash.com/photo-1624018202248-82864cb0f36d?q=80&w=2942";
+
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
     const element = document.getElementById(targetId);
@@ -21,7 +34,7 @@ const Hero: React.FC = () => {
     <section className="relative w-full h-screen min-h-[700px] overflow-hidden bg-[#1B2616]">
       <div className="absolute inset-0 w-full h-full">
         <img 
-            src="https://images.unsplash.com/photo-1624018202248-82864cb0f36d?q=80&w=2942" 
+            src={displayImage} 
             alt="Lush Pacific Northwest Garden" 
             className="w-full h-full object-cover brightness-[0.7]"
             loading="eager"
@@ -35,10 +48,10 @@ const Hero: React.FC = () => {
             North Vancouver | West Vancouver
           </span>
           <h1 className="text-5xl md:text-8xl font-serif text-white tracking-tight mb-8">
-            Artistry in the <span className="italic">Soil.</span>
+            {displayTitle}
           </h1>
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-white/90 font-light leading-relaxed mb-12">
-            Curated landscaping and garden stewardship for the Pacific Northwest's most distinguished homes.
+            {displaySubtitle}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

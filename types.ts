@@ -1,3 +1,4 @@
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -59,11 +60,25 @@ export interface JournalArticle {
   content: string;
 }
 
+export interface Inquiry {
+  id: string;
+  name: string;
+  email: string;
+  location: string;
+  service: string;
+  vision: string;
+  date: number;
+  status: 'new' | 'read' | 'archived';
+}
+
+export type AdminTab = 'dashboard' | 'services' | 'portfolio' | 'journal' | 'inquiries' | 'settings' | 'visual';
+
 export type ViewState = 
   | { type: 'home' }
   | { type: 'project', project: PortfolioProject }
   | { type: 'article', article: JournalArticle }
-  | { type: 'journal-index' };
+  | { type: 'journal-index' }
+  | { type: 'admin', tab: AdminTab };
 
 export interface Product {
   id: string;
@@ -92,4 +107,19 @@ export interface EstimateResult {
 export interface SiteAnalysisResult extends EstimateResult {
   detectedFeatures: string[];
   terrainAssessment: string;
+}
+
+/** Added HomeContent for dynamic section management */
+export interface HomeContent {
+  hero: {
+    title: string;
+    subtitle: string;
+    image: string;
+  };
+  about: {
+    tagline: string;
+    title: string;
+    p1: string;
+  };
+  testimonials: any;
 }

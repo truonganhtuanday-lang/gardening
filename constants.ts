@@ -1,9 +1,10 @@
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
 */
 
-import { Service, PortfolioProject, Testimonial, Product, JournalArticle, EstimateSettings } from './types';
+import { Service, PortfolioProject, Testimonial, Product, JournalArticle, EstimateSettings, HomeContent } from './types';
 
 export const BRAND_NAME = 'Josh Jones Gardening';
 
@@ -239,3 +240,17 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     content: 'A mature Maple or Magnolia is an investment that requires decades of foresight. Our approach to structural pruning ensures that your estate\'s specimens remain healthy and wind-resistant for generations to come...'
   }
 ];
+
+export const INITIAL_HOME_CONTENT: HomeContent = {
+  hero: {
+    title: 'Artistry in the Soil.',
+    subtitle: 'Curated landscaping and garden stewardship for the Pacific Northwest\'s most distinguished homes.',
+    image: 'https://images.unsplash.com/photo-1624018202248-82864cb0f36d?q=80&w=2942'
+  },
+  about: {
+    tagline: 'Our Heritage',
+    title: 'Defined by the North Shore landscape.',
+    p1: 'Josh Jones Gardening was founded on a deep respect for the rugged beauty of the West Coast. We believe that a garden should not just sit upon the land, but emerge from it.'
+  },
+  testimonials: {}
+};

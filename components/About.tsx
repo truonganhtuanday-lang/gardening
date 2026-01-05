@@ -1,3 +1,4 @@
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -6,20 +7,32 @@
 import React from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
-const About: React.FC = () => {
+interface AboutProps {
+  content?: {
+    tagline: string;
+    title: string;
+    p1: string;
+  };
+}
+
+const About: React.FC<AboutProps> = ({ content }) => {
   const sectionRef = useScrollReveal();
+  
+  const tagline = content?.tagline || "Our Heritage";
+  const title = content?.title || "Defined by the North Shore landscape.";
+  const p1 = content?.p1 || "Josh Jones Gardening was founded on a deep respect for the rugged beauty of the West Coast. We believe that a garden should not just sit upon the land, but emerge from it.";
 
   return (
     <section id="about" ref={sectionRef as any} className="bg-[#D9D4CC] py-32 px-6 md:px-12 overflow-hidden">
       <div className="max-w-[1800px] mx-auto flex flex-col md:flex-row items-center gap-16">
         <div className="md:w-1/2 reveal reveal-left">
-          <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#4A5B63] mb-6 block">Our Heritage</span>
+          <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#4A5B63] mb-6 block">{tagline}</span>
           <h2 className="text-4xl md:text-6xl font-serif text-[#1B2616] leading-tight mb-8">
-            Defined by the <br/> North Shore landscape.
+            {title}
           </h2>
           <div className="space-y-6 text-lg text-[#1B2616]/80 font-light leading-relaxed">
             <p>
-              Josh Jones Gardening was founded on a deep respect for the rugged beauty of the West Coast. We believe that a garden should not just sit upon the land, but emerge from it.
+              {p1}
             </p>
             <p>
               Serving North and West Vancouver, our team specializes in high-end maintenance and custom builds that harmonize architectural precision with the organic wildness of the Pacific Northwest.
